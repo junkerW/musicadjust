@@ -13,9 +13,9 @@ class MusicGUI:
     def __init__(self):
         self.layout = [[sg.Text("Musik Prozessor")],
                        [sg.Input(key="in_file_text"),
-                        sg.FolderBrowse('in_browser', key='in_browse', change_submits=True)],
+                        sg.FolderBrowse('Ordner öffnen...', key='in_browse', change_submits=True)],
                        [sg.Input(key="out_file_text"),
-                        sg.FolderBrowse('out_browser', key='out_browse', change_submits=True)],
+                        sg.FolderBrowse('Ziel ordner...', key='out_browse', change_submits=True)],
                        [sg.Button("Process")]]
         # Create the window
         self.window = sg.Window("Musik Prozessor", self.layout)
@@ -42,9 +42,9 @@ class MusicGUI:
                     break
                 else:
                     print('Need both files')
-            if event == 'in_browser':
+            if event == 'Ordner öffnen...':
                 values['in_file_text'] = values['in_browse']
-            if event == 'out_browser':
+            if event == 'Ziel ordner...':
                 values['out_file_text'] = values['out_browse']
         self.close()
 
